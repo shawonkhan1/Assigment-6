@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assigment-6</title>
+
+    <!-- dasyUI cdn Link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+     #btn{
+      display: flex;
+     }
+    </style>
+</head>
+<body>
+    <!-- before login page start -->
+  <section id="lock" class="">
+    <header class="flex gap-[256px] w-11/12 mx-auto justify-between">
+      <div class="mt-[100px]">
+       <h1 class="text-[48px] font-bold mb-[15px]"> <span class="text-blue-400 ">English </span>is Easy!!</h1>
+       <p class="text-[24px] opacity: 0.8;
+       "> আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি 
+           নতুন হন <br> অথবা  আপনার দক্ষতা বাড়াতে চান, আমাদের
+            Interactive Lessons <br> আপনাকে নিয়ে যাবে অন্য একটি Level এ </p>
+       <!-- user name and password input field -->
+       <div class=" flex-col lg:flex-row-reverse ml-[-20px] ">
+           <div class="">
+
+             <div class="card-body ">
+
+               <fieldset class="fieldset">
+                 
+                 <input id="name" type="text" class="input" placeholder="Enter Your Name" />
+         
+                 <input id="password" type="password" value="123456" class="input" placeholder="123456" />
+               
+                 <button id="btn" class="btn  bg-[#422AD5] text-white mt-4 w-[150px]">Get Started</button>
+
+               </fieldset>
+             </div>
+
+           </div>
+         </div>
+           <!-- end password and user name -->
+   </div>
+   <!-- right side before loging -->
+   <div class="w-[750px]">
+     <img src="./assets/hero-student.png" alt="">
+   </div>
+    </header>
+
+    <hr class="border-yellow-400 border-[2px] mb-[50px]">
+    <!-- footer start -->
+    <footer class="w-11/12 mx-auto ">
+     <div class="flex justify-between ">
+       <div>
+         <div class="flex  mb-[20px] font-bold text-[20px]">
+           <div>English</div>
+           <div><img class="w-[30px]" src="./assets/logo.png" alt=""></div>
+           <div>জানালা</div>
+         </div>
+ 
+         <h1 class="mb-[5px] font-bold text-[20px]">ইংরেজি শিখুন সহজে</h1>
+         <p>Providing ED-Tech Applications since 2025</p>
+       </div>
+
+
+      <div class="mt-5">
+        <h1 class="text-gray-500 pb-2">Follow us</h1>
+        <div class="flex gap-2">
+          <a href="https://web.facebook.com/MDXhawon1" target="_blank"><img src="./assets/fb-thumb.png" alt=""></a>
+          <a href="https://www.youtube.com/@JhankarMahbub" target="_blank"> <img class="mt-1" src="./assets/youtube-thumb.png" alt=""></a>
+           <a href="https://github.com/shawonkhan1?tab=repositories" target="_blank"><img src="./assets/github-thumb.png" alt=""></a>
+        </div>
+
+      </div>
+
+     </div>
+
+    </footer>
+
+  </section>
+    <!-- before login page end -->
+
+
+    <!-- after login this page is start -->
+     <!-- navbar -->
+      <main id="nav" class="hidden">
+        <section>
+          <nav class="flex justify-between bg-gray-300 p-[15px] px-[80px]   fixed top-0 left-0 w-full border-b-2 border-gray-400 z-50">
+   
+           <div class="flex  mb-[20px] font-bold text-[20px]">
+             <div>English</div>
+             <div><img class="w-[30px]" src="./assets/logo.png" alt=""></div>
+             <div>জানালা</div>
+           </div>
+   
+           <div class="flex gap-3"> 
+            <a  href="#faq"> <button class="btn  btn-outline btn-primary hover:bg-[gray] "><img src="./assets/fa-circle-question.png" alt="">FAQ</button></a>
+             <a href="#meaning"><button class="btn btn-outline btn-primary hover:bg-[gray]"><img src="./assets/fa-book-open.png" alt="">Learn </button></a>
+             <button id="logout" class="btn btn-outline btn-primary hover:bg-[gray]"><img src="./assets/fa-arrow-right-from-bracket.png" alt="">Logout</button>
+           </div>
+          </nav>
+        </section>
+
+         <!-- heroSection -->
+     <section id="meaning" class="w-11/12 mx-auto mt-[194px]">
+      <h1 class="text-[36px] text-center font-bold "><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+      <div id="btn-7" class="flex gap-5 justify-center items-center mt-[35px]" >
+
+      </div>
+      <!-- on click add one lesson select please -->
+      <div id="no-select" class=" bg-[#F8F8F8] py-[64px] text-center rounded-[24px] mt-[24px] ">
+        <p class="text-[13px text-[#79716B]">আপনি এখনো কোন লেসন সিলেক্ট করেননি</p>
+        <h1 class="text-[36px] text-[#292524] font-bold mt-[5px]">একটি Lesson Select করুন।</h1>
+      </div>
+
+      <div id="btn-description" class="grid grid-cols-3  gap-5">
+        
+      </div>
+     
+     </section>
+
+     <!-- Frequently Asked Questions -->
+      <section id="faq" class="w-11/12 mx-auto ">
+        <h1 class="font-bold text-[36px] mb-[80px] mt-[225px] text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions </h1>
+
+        <div class="bg-[#F8F8F8] collapse collapse-plus bg-base-100 border border-base-300 mb-[10px]">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold">1.How can I start learning English on this website? </div>
+          <div class="collapse-content text-sm">write your ans</div>
+        </div>
+
+        <div class="collapse bg-[#F8F8F8] collapse-plus bg-base-100 border border-base-300 mb-[10px]">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">2.Is this website free to use?</div>
+          <div class="collapse-content text-sm">write your ans</div>
+        </div>
+
+        <div class="collapse bg-[#F8F8F8] collapse-plus bg-base-100 border border-base-300 mb-[10px]">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">3.  Do I need to create an account?</div>
+        </div>
+
+        <div class="collapse bg-[#F8F8F8] collapse-plus bg-base-100 border border-base-300 mb-[10px]">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+          <div class="collapse-content text-sm">write your ans.</div>
+        </div>
+
+        <div class="collapse bg-[#F8F8F8] collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
+        </div>
+
+      </section>
+
+      <hr class="border-yellow-400 border-[2px] mt-[240px] mb-[50px]">
+
+      <!-- footer start -->
+      <footer   class="w-11/12 mx-auto pb-[20px]">
+       <div class="flex justify-between ">
+         <div>
+           <div class="flex  mb-[20px] font-bold text-[20px]">
+             <div>English</div>
+             <div><img class="w-[30px]" src="./assets/logo.png" alt=""></div>
+             <div>জানালা</div>
+           </div>
+   
+           <h1 class="mb-[5px] font-bold text-[20px]">ইংরেজি শিখুন সহজে</h1>
+           <p>Providing ED-Tech Applications since 2025</p>
+         </div>
+  
+  
+        <div class="mt-5">
+          <h1 class="text-gray-500 pb-2">Follow us</h1>
+          <div class="flex gap-2">
+            <a href="https://web.facebook.com/MDXhawon1" target="_blank"><img src="./assets/fb-thumb.png" alt=""></a>
+            <a href="https://www.youtube.com/@JhankarMahbub" target="_blank"> <img class="mt-1" src="./assets/youtube-thumb.png" alt=""></a>
+             <a href="https://github.com/shawonkhan1?tab=repositories" target="_blank"><img src="./assets/github-thumb.png" alt=""></a>
+          </div>
+  
+        </div>
+  
+       </div>
+  
+      </footer>
+
+      
+      </main> 
+
+      
+
+    <script src="index.js"></script>
+</body>
+</html>
