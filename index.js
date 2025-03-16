@@ -13,7 +13,16 @@ document.getElementById("btn").addEventListener('click',function(){
         }
     else{
         if(password === "123456"){
-            document.getElementById("welcome").showModal();
+            Swal.fire({
+                title: "অভিনন্দন",
+                text: " চলুন, আজ নতুন কিছু শেখা যাক...",
+                icon: "success",
+                didOpen: () => {
+                    $(".swal2-popup").draggable(); // ড্র্যাগেবল করতে jQuery UI ব্যবহার
+                }
+            });
+            
+
             document.getElementById("lock").style.display = "none"
             document.getElementById("nav").style.display = "block";
             
@@ -64,21 +73,21 @@ function allBtn(){
 }
 allBtn()
 
-//  select korar jnno bolbe 
 
 
 
-// api 2 fetch
+// api 2 fetch and send data to display
 const displayMeanings = () => {
 fetch(`https://openapi.programming-hero.com/api/level/6`)
 .then(res => res.json())
 .then(data => {
-    console.log(data)
+    
     display(data.data)
 })
 }
 
 
+// displayMeanings to get data and click btn to showing items
 const display = (data) =>{
 
 const dectription = document.getElementById("btn-description")
@@ -129,7 +138,7 @@ data.forEach(element => {
 }
 
 
-// cng id in api url
+// cng id in api url  👉👉 id reachive by 7 btn to dynamic in allBtn
 const displayAnother = (id) => {
 
 
@@ -154,10 +163,10 @@ function removeActive() {
     for(let btn of activebtn){
         btn.classList.remove("active")
     }
-    console.log(activebtn)
+  
 }
 
-
+// wordDetails function
 const wordDetails = (detail) => {
     const url = `https://openapi.programming-hero.com/api/word/${detail}`
     fetch(url)
@@ -168,12 +177,21 @@ const wordDetails = (detail) => {
 
 }
 
+
+
+// wordDetails to take data and showing word details
 const displayWordDetail = (word) => {
+
+    
     document.getElementById("word_details").showModal()
     const wordDetailsDisplay =
      document.getElementById("wordDetailsDisplay")
+    
+    
+   
 
      wordDetailsDisplay.innerHTML = `
+
      <h2 class="text-[20px] font-bold">${word.word} : ${word.pronunciation} </h2>
 
       <h2 class="text-[20px] font-bold">Meaning</h2>
