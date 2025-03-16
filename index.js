@@ -65,10 +65,7 @@ function allBtn(){
 allBtn()
 
 //  select korar jnno bolbe 
-const select = () => {
-    document.getElementById("no-select").style.display = "block"
-}
-// select()
+
 
 
 // api 2 fetch
@@ -141,10 +138,12 @@ const url = `https://openapi.programming-hero.com/api/level/${id}`
 fetch(url)
 .then(res => res.json())
 .then(data=>{
+
+document.getElementById("no-select").style.display = "none"
+
     removeActive();
     const clickbtn = document.getElementById(`btn-${id}`)
     clickbtn.classList.add("active")
-    // console.log(clickbtn)
  display(data.data)
 })
 }
