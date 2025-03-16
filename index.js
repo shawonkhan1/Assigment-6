@@ -4,7 +4,7 @@ document.getElementById("btn").addEventListener('click',function(){
     let password = document.getElementById("password").value;
 
     if(name == ""){
-        alert("Enter Your Name")
+        alert("Please Tell Us Your Name first")
         
     }
     else {
@@ -16,7 +16,7 @@ document.getElementById("btn").addEventListener('click',function(){
            }
 
            else{
-            alert('wrong password')
+            alert('Wrong Password.Contact admin to get your Login Code')
            }
     }
     
@@ -92,16 +92,20 @@ data.forEach(element => {
       p-[30px] rounded-[24px] ">
   
       <div class="bg-white  text-center rounded-[12px] p-[10px]">
-                 <h1 class="text-[32px] text-[#000000] font-bold">${element.word}</h1>
+                 <h1 class="text-[32px] text-[#000000] font-bold">${element.word || "অর্থ নেই"}</h1>
                  <p class="text-[20px] font-bold text-[#000000]">Meaning / Pronounciation</p>
-                 <h1 class="text-[32px] font-bold text-[#18181B]">"${element.meaning} / ${element.pronunciation}"</h1>
+                 <h1 class="text-[32px] font-bold text-[#18181B]">"${element.meaning || "অর্থ নেই"} 
+                 / ${element.pronunciation || "অর্থ নেই"}"</h1>
   
           <div class="flex justify-between p-[56px]">
-      <div onclick="wordDetails(${element.id})" class="bg-[#1A91FF1A] h-9 w-9 rounded-[12px] p-[10px]">
-      <img src="./assets/fa-book-open.png" alt="">
+      <div onclick="wordDetails(${element.id})" class="bg-[#1A91FF1A] h-9 w-9 rounded-[12px] p-[5px]">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARBJREFUSEvFVYsNAiEMfbeJTqJuopOok6iTqJOok+i9C5DC8SmBi00uGIG+vr62DFjYhoX9QwOwBcBvY9b3uD4AfMzK30nLAawAXIzTnA8C7gBwnVkK4ATgWJE+Or+N53nPsxhArXPp8ByChABMy6si8vAomRyMNtNeCHAv5Nye/2aCIMja7kuAvRFVUxQ5AN6n6FN1SYCW3IdBOS0kAEuSLHoYoycLjwHFpcg9UuR0kAx6ArjgJUCpgiTjkshXU67VImvKlIFEReZAI4seGrDZyMJjoBluGgaugmKd3DoqvCaLAfA/TUen0lgcdrxIFgSpGdeesBL9bw+ODYJs7GefTO6xU5+tT2aPmaR69JuAfhqfOBmWkGQAAAAAAElFTkSuQmCC"/>
       </div>
-          <div  class="bg-[#1A91FF1A] h-9 w-9 rounded-[12px] p-[10px]">
-      <img src="./assets/fa-arrow-right-from-bracket.png" alt="">
+          <div  class="bg-[#1A91FF1A] h-9 w-9 rounded-[12px] p-[5px]">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEu1lYERgjAQBJ9OtBOtRK1ErUQ7kU60E2WZHPNEMEGSzDAOyN/93X1CY5VXUxnf/iW4dI1xJddSgp2Znc2MX9U+zOxkZq8ptiUEdAy4lmrf4QEk95gkh8B37etVC/GhA98EJSOSFEHc9RQBz2jiFkj23X0by9RL8jcZnsvgGKxRM4BD0i+v4Bk6yAH3tdQBSMjC2Cp0T6CwlhJQdw1jKxXkQOgjBWsIZAtZMLaDTaUU+GbVaI9digD/8Z1RJQfdFyOQJdUIskJeM6bYwxLGsNl8Bn435oyqaqnDIjYcu3nwPw55CpQCAPD21zmm8eSd2aNirus5ZV4Bs/8FnqPAk8Zqih3XnsSrKf7BidX0Z01qpb4Hqfrk/9UJPgboRxnEEZWEAAAAAElFTkSuQmCC"/>
+
+
+
       </div>
   
       </div>
@@ -157,23 +161,25 @@ const displayWordDetail = (word) => {
     document.getElementById("word_details").showModal()
     const wordDetailsDisplay =
      document.getElementById("wordDetailsDisplay")
+
      wordDetailsDisplay.innerHTML = `
+     <h2 class="text-[20px] font-bold">${word.word} : ${word.pronunciation} </h2>
 
-      <h2>Meaning</h2>
-      <h2>${word.meaning} </h2>
+      <h2 class="text-[20px] font-bold">Meaning</h2>
+      <h2>${word.meaning || "অর্থ পাওয়া যায়নি"} </h2>
 
-      <p class="mt-[5px]">Example</p>
+      <p class="mt-[5px] text-[20px] font-bold">Example</p>
       <p>${word.sentence}</p>
 
-      <p class="mt-[5px]">সমার্থক শব্দ গুলো</p>
+      <p class="mt-[5px] text-[20px] font-bold">সমার্থক শব্দ গুলো</p>
      
        <div class="mb-[15px]">
-       <button class="btn bg-[#EDF7FF]">${word.synonyms[0]}</button>
-        <button class="btn bg-[#EDF7FF]">${word.synonyms[1]}</button>
-        <button class="btn bg-[#EDF7FF]">${word.synonyms[2]}</button> 
+       <button class="btn bg-[#EDF7FF]">${word.synonyms[0] || "সমার্থক শব্দ নেই"}</button>
+        <button class="btn bg-[#EDF7FF]">${word.synonyms[1] || "সমার্থক শব্দ নেই"}</button>
+        <button class="btn bg-[#EDF7FF]">${word.synonyms[2] || "সমার্থক শব্দ নেই"}</button> 
         </div>
       
      `
-console.log(word)
+
 }
 
