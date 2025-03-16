@@ -15,6 +15,10 @@
      #btn{
       display: flex;
      }
+     .active{
+      background: red;
+      color: white;
+     }
     </style>
 </head>
 <body>
@@ -91,8 +95,9 @@
     <!-- after login this page is start -->
      <!-- navbar -->
       <main id="nav" class="hidden">
+
         <section>
-          <nav class="flex justify-between bg-gray-300 p-[15px] px-[80px]   fixed top-0 left-0 w-full border-b-2 border-gray-400 z-50">
+          <nav class="flex justify-between bg-gray-300 p-[15px] md:px-[80px]   fixed top-0 left-0 w-full border-b-2 border-gray-400 z-50">
    
            <div class="flex  mb-[20px] font-bold text-[20px]">
              <div>English</div>
@@ -111,7 +116,7 @@
          <!-- heroSection -->
      <section id="meaning" class="w-11/12 mx-auto mt-[194px]">
       <h1 class="text-[36px] text-center font-bold "><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
-      <div id="btn-7" class="flex gap-5 justify-center items-center mt-[35px]" >
+      <div id="btn-8" class="flex gap-5 flex-wrap  justify-center items-center mt-[35px]" >
 
       </div>
       <!-- on click add one lesson select please -->
@@ -120,7 +125,7 @@
         <h1 class="text-[36px] text-[#292524] font-bold mt-[5px]">একটি Lesson Select করুন।</h1>
       </div>
 
-      <div id="btn-description" class="grid grid-cols-3  gap-5">
+      <div id="btn-description" class="grid md:grid-cols-3  gap-5">
         
       </div>
      
@@ -164,7 +169,7 @@
 
       <!-- footer start -->
       <footer   class="w-11/12 mx-auto pb-[20px]">
-       <div class="flex justify-between ">
+       <div class="md:flex justify-between ">
          <div>
            <div class="flex  mb-[20px] font-bold text-[20px]">
              <div>English</div>
@@ -191,10 +196,54 @@
   
       </footer>
 
+
+      <!-- modal strt -->
+      <section>
+<!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="word_details" class="modal">
+  <div class="modal-box">
+   <div id="wordDetailsDisplay">
+
+   </div>
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn text-white bg-[#422AD5]">Complete Learning</button>
+      </form>
+    </div>
+  </div>
+  </dialog>
+      </section>
+
+
+      <!-- go now next lesson -->
+      <section class="hidden">
+        <div class="bg-[#F8F8F8] rounded-[24px] py-[50px] w-11/12 mx-auto text-center">
+           <div class="flex justify-center items-center">
+            <img class="w-[80px]"  src="./assets/alert-error.png" alt="">
+           </div>
+           <p class="text-[13px] text-[#79716B] mt-[15px]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+           <h1 class="text-[36px] font-bold mt-[15px]">নেক্সট Lesson এ যান</h1>
+        </div>
+      </section>
       
       </main> 
 
-      
+    <!-- Open the modal using ID.showModal() method -->
+     <div class="">
+      <button class="btn" onclick="my_modal_2.showModal()"></button>
+      <dialog id="welcome" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">Welcome! </h3>
+          <p class="py-4"> Login complete! Enjoy your session...</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+     </div>
+
+     
 
     <script src="index.js"></script>
 </body>
