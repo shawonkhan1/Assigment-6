@@ -1,23 +1,29 @@
 // ck name and password
 document.getElementById("btn").addEventListener('click',function(){
     let name = document.getElementById('name').value;
-    let password = document.getElementById("password").value;
+    let password = document.getElementById("password").value.trim();
 
     if(name == ""){
-        alert("Please Tell Us Your Name first")
+        alert("Please enter your Name.")
         
     }
     else {
+        if(password == ""){
+            alert("Please enter your password.")
+        }
+    else{
         if(password === "123456"){
-     document.getElementById("welcome").showModal();
-     document.getElementById("lock").style.display = "none"
-     document.getElementById("nav").style.display = "block";
-     
-           }
-
-           else{
-            alert('Wrong Password.Contact admin to get your Login Code')
-           }
+            document.getElementById("welcome").showModal();
+            document.getElementById("lock").style.display = "none"
+            document.getElementById("nav").style.display = "block";
+            
+    }
+       
+      else{
+     alert('Wrong Password.Contact admin to get your Login Code')
+     }
+    }
+        
     }
     
     document.getElementById("password").value = "";
@@ -58,11 +64,15 @@ function allBtn(){
 }
 allBtn()
 
- 
+//  select korar jnno bolbe 
+const select = () => {
+    document.getElementById("no-select").style.display = "block"
+}
+// select()
+
 
 // api 2 fetch
 const displayMeanings = () => {
-
 fetch(`https://openapi.programming-hero.com/api/level/6`)
 .then(res => res.json())
 .then(data => {
@@ -75,12 +85,14 @@ fetch(`https://openapi.programming-hero.com/api/level/6`)
 const display = (data) =>{
 
 const dectription = document.getElementById("btn-description")
+
 dectription.innerHTML = ""
+
 if(data.length === 0){
-   document.getElementById("no-select").style.display = "block"
+   document.getElementById("next_lesson").style.display = "block"
 }
 else{
-    document.getElementById("no-select").style.display = "none"
+    document.getElementById("next_lesson").style.display = "none"
 }
 data.forEach(element => {
     console.log(element.level_no)
@@ -182,4 +194,6 @@ const displayWordDetail = (word) => {
      `
 
 }
+
+
 

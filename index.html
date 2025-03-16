@@ -120,11 +120,24 @@
 
       </div>
       <!-- on click add one lesson select please -->
-      <div id="no-select" class=" bg-[#F8F8F8] py-[64px] text-center rounded-[24px] mt-[24px] ">
+      <div id="no-select" class="hidden bg-[#F8F8F8] py-[64px] text-center rounded-[24px] mt-[24px] ">
         <p class="text-[13px text-[#79716B]">আপনি এখনো কোন লেসন সিলেক্ট করেননি</p>
         <h1 class="text-[36px] text-[#292524] font-bold mt-[5px]">একটি Lesson Select করুন।</h1>
       </div>
 
+      <!-- go now next lesson -->
+      <section id="next_lesson" class="hidden mt-[25px]">
+        <div class="bg-[#F8F8F8] rounded-[24px] py-[50px] w-11/12 mx-auto text-center">
+           <div class="flex justify-center items-center">
+            <img class="w-[80px]"  src="./assets/alert-error.png" alt="">
+           </div>
+           <p class="text-[13px] text-[#79716B] mt-[15px]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+           <h1 class="text-[36px] font-bold mt-[15px]">নেক্সট Lesson এ যান</h1>
+        </div>
+      </section>  
+
+
+<!-- akne sob item asbe -->
       <div id="btn-description" class="grid md:grid-cols-3  gap-5">
         
       </div>
@@ -133,7 +146,7 @@
 
      <!-- Frequently Asked Questions -->
       <section id="faq" class="w-11/12 mx-auto ">
-        <h1 class="font-bold text-[36px] mb-[80px] mt-[225px] text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions </h1>
+        <h1 class="font-bold text-[36px] mb-[80px] mt-[105px] text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions </h1>
 
         <div class="bg-[#F8F8F8] collapse collapse-plus bg-base-100 border border-base-300 mb-[10px]">
           <input type="radio" name="my-accordion-3" checked="checked" />
