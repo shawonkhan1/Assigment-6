@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assigment-6</title>
+    <title>English জানালা</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 
     <!-- dasyUI cdn Link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -15,10 +16,12 @@
     
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
-      html{
-        scroll-behavior: smooth;
-      }
+
+     html {
+     scroll-behavior: smooth;
+    }
      #btn{
       display: flex;
      }
@@ -126,6 +129,15 @@
       <div id="btn-8" class="flex gap-5 flex-wrap  justify-center items-center mt-[35px]" >
 
       </div>
+
+        <!-- spnieeer show hobe akne -->
+        <div class="w-11/12 mx-auto mt-3">
+          <div id="spinner"  class="flex justify-center items-center" style="display: none;" >
+            <span class="loading loading-spinner loading-xl w-[50px] h-[50px]"></span>
+          </div>
+        </div>
+
+
       <!-- on click add one lesson select please -->
       <div id="no-select" class=" bg-[#F8F8F8] py-[64px] text-center rounded-[24px] mt-[24px] ">
         <p class="text-[13px text-[#79716B]">আপনি এখনো কোন লেসন সিলেক্ট করেননি</p>
@@ -143,6 +155,7 @@
         </div>
       </section>  
 
+    
 
 <!-- akne sob item asbe -->
       <div id="btn-description" class="grid md:grid-cols-3  gap-5">

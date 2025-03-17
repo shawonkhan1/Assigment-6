@@ -4,13 +4,25 @@ document.getElementById("btn").addEventListener('click',function(){
     let password = document.getElementById("password").value.trim();
 
     if(name == ""){
-        alert("Please enter your Name.")
+       
+        Swal.fire({
+            title: "Name?",
+            text: " Please enter your Name!",
+            icon: "question"
+          });
         
     }
     else {
         if(password == ""){
-            alert("Please enter your password.")
+          
+            Swal.fire({
+                title: "Password?",
+                text: "Please enter your password!",
+                icon: "question"
+              });
+            
         }
+
     else{
         if(password === "123456"){
             Swal.fire({
@@ -28,8 +40,14 @@ document.getElementById("btn").addEventListener('click',function(){
             
     }
        
+    
       else{
-     alert('Wrong Password.Contact admin to get your Login Code')
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Wrong Password.Contact admin to get your Login Code!",
+            
+          });
      }
     }
         
@@ -41,6 +59,9 @@ document.getElementById("btn").addEventListener('click',function(){
  
 // logout btn
 document.getElementById("logout").addEventListener('click',function(){
+
+    Swal.fire("Enter Your Name And Password");
+
   document.getElementById('lock').style.display = "block"
   document.getElementById('nav').style.display = "none"
 })
@@ -61,7 +82,7 @@ function allBtn(){
     
         
         newDiv.classList.add('fle')
-        newDiv.innerHTML = `<button  id="btn-${elements.level_no}" onclick="displayAnother(${elements.level_no})"
+        newDiv.innerHTML = `<button  id="btn-${elements.level_no}" onclick="displayAnother(${elements.level_no});   showSpinner();"
          class="btn btn-outline btn-primary hover:text-black hover:bg-slate-200 ">
          <img src="./assets/fa-book-open.png" alt=""> Lesson-${elements.level_no}</button>`
         
@@ -71,9 +92,18 @@ function allBtn(){
       
     })
 }
+
 allBtn()
 
 
+// spinner add function
+function showSpinner() {
+    document.getElementById("spinner").style.display = "flex";
+    setTimeout(function() {
+      document.getElementById("spinner").style.display = "none";
+    }, 200);
+  }
+ 
 
 
 // api 2 fetch and send data to display
@@ -87,7 +117,7 @@ fetch(`https://openapi.programming-hero.com/api/level/6`)
 }
 
 
-// displayMeanings to get data and click btn to showing items
+// displayMeanings to get data and click btn to showing items 
 const display = (data) =>{
 
 const dectription = document.getElementById("btn-description")
@@ -101,7 +131,6 @@ else{
     document.getElementById("next_lesson").style.display = "none"
 }
 data.forEach(element => {
-    console.log(element.level_no)
     
     let div = document.createElement("div");
      
