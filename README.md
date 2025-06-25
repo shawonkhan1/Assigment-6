@@ -1,20 +1,26 @@
-# Project Name
+# Assigment-6
 
 ## Overview
-এটি একটি ওয়েবসাইট যা...
+This project is a responsive website created using HTML, Tailwind CSS, and JavaScript. It showcases interactive UI elements built with JavaScript and styled with Tailwind CSS as part of my assignment work.
+
+## Live Demo
+[View Live Demo](https://shawonkhan1.github.io/Assigment-6/)
 
 ## Technologies Used
-- HTML
-- CSS
+- HTML5
+- Tailwind CSS
 - JavaScript
 
 ## Features
-- Responsive design
-- User-friendly interface
+- Responsive design with Tailwind CSS
+- Interactive elements powered by JavaScript
+- Clean and semantic HTML structure
 
 ## How to Run Locally
-1. রেপো ক্লোন করুন
-2. ব্রাউজারে `index.html` ওপেন করুন
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/shawonkhan1/Assigment-6.git
 
-## Screenshot
-![Screenshot](link-to-image)
+
+Navigate to the project folder:
+cd Assigment-6
