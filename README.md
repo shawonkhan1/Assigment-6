@@ -24,3 +24,7 @@ This project is a responsive website created using HTML, Tailwind CSS, and JavaS
 
 Navigate to the project folder:
 cd Assigment-6
+
+
+![Assigment-6 Screenshot](https://raw.githubusercontent.com/shawonkhan1/Assigment-6/main/assets/ss.png)
+
